@@ -2,8 +2,9 @@ package org.example;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class Pokemon {
+import java.io.FileNotFoundException;
 
+public class Pokemon {
     @CsvBindByName
     private String name;
     @CsvBindByName
@@ -22,6 +23,9 @@ public class Pokemon {
     private int spDefense;
     @CsvBindByName
     private int speed;
+
+    public Pokemon() throws FileNotFoundException {
+    }
 
     public String getName() {
         return name;
