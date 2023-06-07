@@ -12,15 +12,8 @@ public class Main {
         Display.welcome();
 
         while (gameOn) {
-            Display.menu();
-            Scanner myObj = new Scanner(System.in);
-            String playOn = myObj.nextLine();
-            if (playOn.equalsIgnoreCase("1")){
-                Display.showPoke();
-            }
-            else if (playOn.equalsIgnoreCase("2")){
-                gameOn = Display.endGame();
-            }
+            gameOn = Display.menu();
+
         }
 
     }

@@ -5,6 +5,10 @@ import com.opencsv.bean.CsvBindByName;
 import java.io.FileNotFoundException;
 
 public class Pokemon {
+
+
+    @CsvBindByName
+    private int id;
     @CsvBindByName
     private String name;
     @CsvBindByName
@@ -26,7 +30,9 @@ public class Pokemon {
 
     public Pokemon() throws FileNotFoundException {
     }
+    public int getId() { return id; }
 
+    public void setId(int id) { this.id = id; }
     public String getName() {
         return name;
     }
