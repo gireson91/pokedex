@@ -56,7 +56,17 @@ public class Display {
     public static int selectPoke() {
         System.out.println("Which number Pokemon do you want to view?");
         Scanner myObj = new Scanner(System.in);
-        int pokeNum = Integer.parseInt(myObj.nextLine());
-        return pokeNum;
+        if (myObj.hasNextInt()) {
+            int pokeNum = Integer.parseInt(myObj.nextLine());
+            if (pokeNum > 0 && pokeNum < 152) {
+                return pokeNum;
+            } else {
+                System.out.println("Please enter a valid number between 1 and 151...");
+                return selectPoke();
+            }
+        } else {
+            System.out.println("Please enter a valid number between 1 and 151...");
+            return selectPoke();
+        }
     }
-}
+    }
